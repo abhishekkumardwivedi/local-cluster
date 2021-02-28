@@ -95,3 +95,10 @@ free -m
 ```
 sudo apt install kibana
 ```
+
+#### Restart all
+```
+ sudo systemctl restart elasticsearch
+ sudo systemctl restart logstash
+ sudo systemctl restart kibana
+```
