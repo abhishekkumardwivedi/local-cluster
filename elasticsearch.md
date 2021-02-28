@@ -3,6 +3,12 @@ Install JRE
 ```
 sudo apt-get install default-jre
 ```
+Have deb located and install elasticsearch, logstash and kibana one by one
+```
+echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+```
+Or otherwise download and install as:
+
 Install elastic search
 ```
 curl https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.5.3.deb -o elastic.deb
@@ -85,4 +91,7 @@ sudo systemctl disable influxd
 sudo systemctl stop mysql
 sudo systemctl disable mysql
 free -m
+```
+```
+sudo apt install kibana
 ```
