@@ -59,3 +59,24 @@ Test mDNS lists the found devices
 ```
 avahi-browse -a 
 ```
+
+### Creating new user in Linux
+
+Create user and set password
+```
+sudo useradd abhishek
+sudo passwd abhishek
+```
+Set user mode as root
+```
+sudo usermod -aG sudo abhishek
+```
+Add home directory for user and set
+```
+sudo vi /etc/passwd
+```
+Change `abhishek:x:1001:1001::/home/abhishek:/bin/bash` to `abhishek:x:1001:1001:,,,:/home/abhishek:/bin/bash` by adding `,,,`
+```
+sudo mkdir /home/abhishek
+sudo chown -R abhishek:abhishek /home/abhishek
+```
