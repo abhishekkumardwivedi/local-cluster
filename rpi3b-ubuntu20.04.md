@@ -1,4 +1,4 @@
-## SSH issue:
+### SSH issue:
 
 ```
 sudo apt install ssh
@@ -7,9 +7,9 @@ sudo systemctl start ssh.service
 sudo systemctl status ssh.service
 ```
 
-## Wifi connection issue:
+### Wifi connection issue:
 
-### apt install connman
+#### apt install connman
 
 ```
 $  /usr/sbin/connmanctl 
@@ -34,7 +34,7 @@ Connected wifi_f8d111090ed6_6d617269636f6e5f64655f6d6965726461_managed_psk
 connmanctl> quit
 ```
 
-## Installing mDNS
+### Installing mDNS
 * https://www.raspberrypi.org/forums/viewtopic.php?t=267113
 
 Install avahi and config daemon
