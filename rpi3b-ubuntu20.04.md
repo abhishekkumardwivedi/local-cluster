@@ -76,6 +76,7 @@ Add home directory for user and set
 sudo vi /etc/passwd
 ```
 Change `abhishek:x:1001:1001::/home/abhishek:/bin/bash` to `abhishek:x:1001:1001:,,,:/home/abhishek:/bin/bash` by adding `,,,`
+Make sure the shell is `/bin/bash` not `/bin/sh` to land to home directory.
 ```
 sudo mkdir /home/abhishek
 sudo chown -R abhishek:abhishek /home/abhishek
