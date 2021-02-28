@@ -81,3 +81,8 @@ Make sure the shell is `/bin/bash` not `/bin/sh` to land to home directory.
 sudo mkdir /home/abhishek
 sudo chown -R abhishek:abhishek /home/abhishek
 ```
+
+### Password-less login
+```
+ssh-copy-id abhishek@rpi3.local
+```
