@@ -86,3 +86,26 @@ sudo chown -R abhishek:abhishek /home/abhishek
 ```
 ssh-copy-id abhishek@rpi3.local
 ```
+
+### Install influxdb
+
+https://computingforgeeks.com/install-influxdb-on-debian-10-buster-linux/
+```
+sudo apt update
+sudo apt install -y gnupg2 curl wget
+wget -qO- https://repos.influxdata.com/influxdb.key | sudo apt-key add -
+echo "deb https://repos.influxdata.com/debian buster stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+sudo apt update
+sudo apt install -y influxdb
+sudo systemctl enable --now influxdb
+systemctl status influxdb
+# check the status
+sudo apt -y install ufw
+sudo ufw enable
+sudo ufw allow 22/tcp
+sudo ufw allow 8086/tcp
+sudo vim /etc/influxdb/influxdb.conf 
+[http]
+ auth-enabled = true
+curl -XPOST "http://localhost:8086/query" --data-urlencode "q=CREATE USER influxdb WITH PASSWORD 'password' WITH ALL PRIVILEGES"
+```
