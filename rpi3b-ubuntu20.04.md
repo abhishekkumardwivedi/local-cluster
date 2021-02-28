@@ -36,3 +36,26 @@ connmanctl> quit
 
 ## Installing mDNS
 * https://www.raspberrypi.org/forums/viewtopic.php?t=267113
+
+Install avahi and config daemon
+```
+sudo apt-get install avahi-utils 
+sudo vi /etc/avahi/avahi-daemon.conf
+```
+```
+# this makes any hostname.local refer to hosts on your lan reachable via mdns
+domain-name=local
+# they are apparently turned off as default, i'd guess for privacy / security reasons
+# this broadcast your hostname and hostinfo on the lan via mdns
+publish-hinfo=yes
+publish-workstation=yes
+```
+set hostname
+```
+/etc/hostname
+# now reboot teh device
+```
+Test mDNS lists the found devices
+```
+avahi-browse -a 
+```
