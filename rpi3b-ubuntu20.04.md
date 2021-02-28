@@ -52,7 +52,8 @@ publish-workstation=yes
 ```
 set hostname
 ```
-/etc/hostname
+sudo vi /etc/hostname
+sudo vi /etc/hosts
 # now reboot teh device
 ```
 Test mDNS lists the found devices
